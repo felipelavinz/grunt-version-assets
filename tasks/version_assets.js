@@ -25,6 +25,7 @@ module.exports = function(grunt) {
     var options = this.options({
       grepFiles: [],
       keepOriginal: true,
+      keepOldVersions: false,
     });
 
     Object.keys(options).forEach(function(key) {
@@ -52,6 +53,7 @@ module.exports = function(grunt) {
       assets: assets,
       grepFiles: grepFiles,
       keepOriginal: options.keepOriginal,
+      keepOldVersions: options.keepOldVersions,
     });
 
     versioner.run(function(err) {
